@@ -1,0 +1,22 @@
+{
+  "name": "buddyfit",
+  "version": "0.0.1",
+  "description": "buddy fit",
+  "main": "index.html",
+  "keywords": [
+    "buddy",
+    "fit"
+  ],
+  "authors": [
+    "sujan"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
