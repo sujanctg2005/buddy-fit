@@ -8,10 +8,12 @@ cordova platform add android
 follow this URL: http://forum.ionicframework.com/t/renaming-android-build-apk-from-cordovaapp-to-your-app-name/15416
 # build (Step4)
  cordova build android
-# Generate a private key , pass 123456 (Step5)
+# Generate a private key , pass 123456 , make sure keytool is available, set path=%path%;C:\Program Files\Java\jdk1.7.0_45\bin; (Step5) 
 keytool -genkey -v -keystore buddyfit-release-key.keystore -alias alias_buddyfit -keyalg RSA -keysize 2048 -validity 10000
 
 /*  
+Enter keystore password:
+Re-enter new password:
 What is your first and last name?
   [Unknown]:  sujan nath
 What is the name of your organizational unit?
@@ -31,7 +33,7 @@ Generating 2,048 bit RSA key pair and self-signed certificate (SHA256withRSA) wi
         for: CN=sujan nath, OU=mobile app, O=solution-hub, L=bellevue, ST=WA, C=US
 Enter key password for <alias_buddyfit>
         (RETURN if same as keystore password):
-Re-enter new password:123456
+Re-enter new password:
 [Storing buddyfit-release-key.keystore]
 */
 # add key info in local.properties under android  platform (Step5)
