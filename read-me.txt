@@ -1,0 +1,53 @@
+
+
+#create the project (Step1)
+cordova create buddyfit com.solutionhub.buddyfit BuddyFit
+#add platform (Step2)
+cordova platform add android
+# rename app name to Buddyfit (Step3)
+follow this URL: http://forum.ionicframework.com/t/renaming-android-build-apk-from-cordovaapp-to-your-app-name/15416
+# build (Step4)
+ cordova build android
+# Generate a private key , pass 123456 (Step5)
+keytool -genkey -v -keystore buddyfit-release-key.keystore -alias alias_buddyfit -keyalg RSA -keysize 2048 -validity 10000
+
+/*  
+What is your first and last name?
+  [Unknown]:  sujan nath
+What is the name of your organizational unit?
+  [Unknown]:  mobile app
+What is the name of your organization?
+  [Unknown]:  solution-hub
+What is the name of your City or Locality?
+  [Unknown]:  bellevue
+What is the name of your State or Province?
+  [Unknown]:  WA
+What is the two-letter country code for this unit?
+  [Unknown]:  US
+Is CN=sujan nath, OU=mobile app, O=solution-hub, L=bellevue, ST=WA, C=US correct?
+  [no]:  yes
+
+Generating 2,048 bit RSA key pair and self-signed certificate (SHA256withRSA) with a validity of 10,000 days
+        for: CN=sujan nath, OU=mobile app, O=solution-hub, L=bellevue, ST=WA, C=US
+Enter key password for <alias_buddyfit>
+        (RETURN if same as keystore password):
+Re-enter new password:123456
+[Storing buddyfit-release-key.keystore]
+*/
+# add key info in local.properties under android  platform (Step5)
+key.store=F:\project\ow\fit\buddyFit\buddyfit\platforms\android\buddyfit-release-key.keystore
+key.alias=alias_buddyfit
+key.store.password=123456
+key.alias.password=123456
+# build app with key sign (Step6)
+cordova build android  --release
+
+#emulate android (Step6)
+cordova emulate android
+
+
+## miscellaneous command
+cordova platform update android
+
+
+
